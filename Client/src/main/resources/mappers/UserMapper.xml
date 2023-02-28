@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.client.dao.UserDao">
+
+    <insert id="RegisterUser">
+        INSERT INTO user_db(userId, username, password) VALUES (#{userId},#{userId},#{password});
+    </insert>
+    <insert id="insertFriend">
+        INSERT INTO user_relation_db(userId, friendId) VALUES (#{userId},#{friendId})
+    </insert>
+    <select id="VerificationIfAvailable" resultType="java.lang.String">
+        SELECT userId FROM user_db WHERE userId = #{userId}
+    </select>
+    <select id="findAll" resultType="com.example.client.entity.User">
+        SELECT * FROM user_db
+    </select>
+    <select id="login" resultType="com.example.client.entity.User">
+        SELECT * FROM user_db WHERE userId = #{userId} AND password = #{password}
+    </select>
+    <select id="findByName" resultType="com.example.client.entity.User">
+        SELECT * FROM user_db
+        <where>
+        <if test="username != null and username != ''">
+            and username like concat('%',#{username},'%')
+        </if>
+        </where>
+    </select>
+
+    <select id="findFriend" resultType="com.example.client.entity.User">
+        SELECT * FROM user_db WHERE userId IN (SELECT friendId FROM user_relation_db WHERE userId = #{userId})
+    </select>
+    <select id="getUserByUserId" resultType="com.example.client.entity.User">
+        SELECT * FROM user_db WHERE userId = #{userId}
+    </select>
+
+
+</mapper>

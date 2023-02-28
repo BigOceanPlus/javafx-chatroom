@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.viewsController.RegisterController">
+   <children>
+      <AnchorPane prefHeight="84.0" prefWidth="870.0" style="-fx-background-color: #A9A9A9;" />
+      <GridPane prefHeight="328.0" prefWidth="770.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="119.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="485.0" minWidth="10.0" prefWidth="485.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="84.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="114.0" text="用户名" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="114.0" text="密码" textAlignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="129.0" text="确认密码" textAlignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="user_field" onKeyReleased="#user_field_exit" GridPane.columnIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font></TextField>
+            <PasswordField fx:id="password_field" onKeyReleased="#password_field_exit" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font></PasswordField>
+            <PasswordField fx:id="password2_field" onKeyReleased="#password2_field_exit" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font></PasswordField>
+            <Label fx:id="user_label" alignment="CENTER" prefHeight="36.0" prefWidth="181.0" textFill="#eb0909" GridPane.columnIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="label2" alignment="CENTER" prefHeight="36.0" prefWidth="180.0" text="请输入密码" textFill="#eb0909" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="label3" alignment="CENTER" prefHeight="36.0" prefWidth="175.0" text="请确认密码" textFill="#eb0909" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </VBox.margin>
+      </GridPane>
+      <HBox prefHeight="116.0" prefWidth="810.0" spacing="100.0">
+         <children>
+            <HBox prefHeight="59.0" prefWidth="268.0" spacing="30.0">
+               <children>
+                  <Button fx:id="btn1" defaultButton="true" mnemonicParsing="false" onAction="#btn1_action" onMouseEntered="#btn1_enter" onMouseExited="#btn1_exit" opacity="0.4" prefHeight="78.0" prefWidth="211.0" style="-fx-background-color: white; -fx-border-color: blue; -fx-border-radius: 50; -fx-background-radius: 50;" text="注册">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="clue" alignment="CENTER" prefHeight="41.0" prefWidth="117.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button fx:id="btn2" mnemonicParsing="false" onAction="#btn2_action" onMouseEntered="#btn2_enter" onMouseExited="#btn2_exit" opacity="0.4" prefHeight="79.0" prefWidth="171.0" style="-fx-background-color: white; -fx-border-color: blue; -fx-border-radius: 50; -fx-background-radius: 50;" text="返回登录">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </VBox.margin></HBox>
+   </children>
+</VBox>
